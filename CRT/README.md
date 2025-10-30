@@ -1,17 +1,17 @@
-# README Report: RSA Decryption with CRT Optimization [cite: 2]
+# README Report: RSA Decryption with CRT Optimization 
 
 This report accompanies the source code submission for the "RSA Decryption with Chinese Remainder Theorem (CRT)" exercise.
 
 ---
 
-## 1. Group Members [cite: 26]
+## 1. Group Members 
 
 * **Name:** Tran Nguyen My Anh, **Student ID:** 20235474
 * **Name:** Nguyen Khanh Ly, **Student ID:** 20235600
 
 ---
 
-## 2. Test Results [cite: 24]
+## 2. Test Results 
 
 The implementation was tested using both the small prime numbers from the worked example and the large prime numbers provided in the test data. Both functions (`rsa_decrypt` and `rsa_decrypt_crt`) produced identical, correct results in both test cases.
 
