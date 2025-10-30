@@ -29,8 +29,8 @@ The implementation was tested using both the small prime numbers from the worked
     * `q = 98765432109876543210987654323` 
     * `d = 183037555140763297287823421841341095154128759392745892977` 
     * `y = 12345678901234567890` 
-* **Standard Decryption Result:** `55060800662583164188075344335338116047702222384210620613`
-* **CRT Decryption Result:** `55060800662583164188075344335338116047702222384210620613`
+* **Standard Decryption Result:** `324309952877571399564352792629998816095895977177801581031`
+* **CRT Decryption Result:** `324309952877571399564352792629998816095895977177801581031`
 * **Verification:** Both `rsa_decrypt` and `rsa_decrypt_crt` produced the same decrypted plaintext.
 
 ---
@@ -41,12 +41,12 @@ A comparison of execution times was performed using the large prime test data. T
 
 | Decryption Method | Average Execution Time (100 runs) |
 | :--- | :--- |
-| Standard (`rsa_decrypt`) | ~0.000107 seconds |
-| CRT-Optimized (`rsa_decrypt_crt`) | ~0.000053 seconds |
+| Standard (`rsa_decrypt`) | ~0.000067 seconds |
+| CRT-Optimized (`rsa_decrypt_crt`) | ~0.000035 seconds |
 
 ### Analysis
 
-The CRT-optimized version is **significantly faster** (approximately **2.01x** in this test).
+The CRT-optimized version is **significantly faster** (approximately **1.89x** in this test).
 
 This speedup confirms the purpose of using CRT for RSA decryption. The standard method computes one large exponentiation: $x = y^d \pmod n$, where $n$ is a large 2048-bit number (in real-world use). The CRT method replaces this single expensive operation with two smaller exponentiations: $x_p \equiv y_p^{d_p} \pmod p$ and $x_q \equiv y_q^{d_q} \pmod q$.
 
