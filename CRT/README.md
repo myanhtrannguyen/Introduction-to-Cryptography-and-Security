@@ -1,6 +1,6 @@
 # README Report: RSA Decryption with CRT Optimization [cite: 2]
 
-This report accompanies the source code submission for the "RSA Decryption with Chinese Remainder Theorem (CRT)" exercise[cite: 3].
+This report accompanies the source code submission for the "RSA Decryption with Chinese Remainder Theorem (CRT)" exercise.
 
 ---
 
@@ -17,10 +17,10 @@ The implementation was tested using both the small prime numbers from the worked
 
 ### Test 1: Small Primes (Worked Example)
 
-* **Input:** $p=11$, $q=13$, $n=143$, $d=103$, $y=15$ [cite: 54, 55, 56, 58, 59]
+* **Input:** $p=11$, $q=13$, $n=143$, $d=103$, $y=15$ 
 * **Standard Decryption Result:** `141`
 * **CRT Decryption Result:** `141`
-* **Verification:** Both methods correctly match the expected result $x=141$ from the worked example[cite: 76].
+* **Verification:** Both methods correctly match the expected result $x=141$ from the worked example.
 
 ### Test 2: Large Primes (Test Data)
 
@@ -48,6 +48,6 @@ A comparison of execution times was performed using the large prime test data. T
 
 The CRT-optimized version is **significantly faster** (approximately **2.01x** in this test).
 
-This speedup confirms the purpose of using CRT for RSA decryption. The standard method computes one large exponentiation: $x = y^d \pmod n$, where $n$ is a large 2048-bit number (in real-world use)[cite: 6]. The CRT method replaces this single expensive operation with two smaller exponentiations: $x_p \equiv y_p^{d_p} \pmod p$ and $x_q \equiv y_q^{d_q} \pmod q$.
+This speedup confirms the purpose of using CRT for RSA decryption. The standard method computes one large exponentiation: $x = y^d \pmod n$, where $n$ is a large 2048-bit number (in real-world use). The CRT method replaces this single expensive operation with two smaller exponentiations: $x_p \equiv y_p^{d_p} \pmod p$ and $x_q \equiv y_q^{d_q} \pmod q$.
 
-Because $p$ and $q$ are each about half the size of $n$, and the reduced exponents $d_p$ and $d_q$ are also smaller, these two computations are much faster than the single large one[cite: 46]. This speed advantage heavily outweighs the small additional cost of transformation and recombination[cite: 9, 29].
+Because $p$ and $q$ are each about half the size of $n$, and the reduced exponents $d_p$ and $d_q$ are also smaller, these two computations are much faster than the single large one. This speed advantage heavily outweighs the small additional cost of transformation and recombination.
