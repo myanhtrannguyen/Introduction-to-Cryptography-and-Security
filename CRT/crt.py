@@ -106,8 +106,6 @@ if __name__ == "__main__":
 
     print(f"p = {p_large}")
     print(f"q = {q_large}")
-    # print(f"n = {n_large}") # n is very long, so we skip printing it
-    # print(f"d = {d_large}") # d is very long, so we skip printing it
     print(f"y = {y_large}")
 
     print("\nCalculating (large primes)...")
